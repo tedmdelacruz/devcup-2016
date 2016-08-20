@@ -4,26 +4,35 @@ import axios from 'axios'
 import env from './env'
 
 @autobind
-class Store {
-    @observable counter = 0
+class AppStore {
+
+}
+
+@autobind
+class DashboardStore {
     @observable isLoading = false
-    @observable message = ''
+    @observable errors = []
+    @observable orders = []
 
-    increase() {
-        this.counter++
-    }
+    fetchOrders() {
+        this.orders =  [{"id":1,"status":"Ready for delivery","created":null,"weight":"1.2 kg","pending_payment":"PHP 128.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":"Awaiting confirmation","created":null,"weight":"2.1 kg","pending_payment":"PHP 212.00","laundromat":{"id":1,"name":"Lavandera Ko"}}];
+        return
 
-    fetchData() {
         this.isLoading = true
-        this.message = ''
-
-        axios.get(env.BASE_URL + '/test')
+        console.log(env.BASE_URL + '/orders')
+        axios.get(env.BASE_URL + '/orders')
             .then(response => {
-                this.message = response.data.message
+                this.orders = response.data
                 this.isLoading = false
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                this.errors.push('Failed to retrieve orders')
+            })
     }
 }
 
-export default new Store()
+export default {
+    app: new AppStore,
+    dashboard: new DashboardStore
+}

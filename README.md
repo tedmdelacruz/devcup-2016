@@ -18,7 +18,7 @@ I thought, it would be nice to have a mobile app that would help me manage my la
 
 So that's the story behind my idea.
 
-# Tech used
+# Stack
 Client (Android)
 * React Native
 * MobX

@@ -15,6 +15,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    return ['message' => 'This is a response from the server'];
+Route::get('/orders', function () {
+    return [
+        [
+            'id' => 1,
+            'status' => 'Ready for pickup',
+            'created' => null,
+            'weight' => '1.2 kg',
+            'cost' => 'PHP 128.00',
+            'laundromat' => [
+                'id' => 1,
+                'name' => 'Lavandera Ko',
+            ],
+        ],
+        [
+            'id' => 2,
+            'status' => 'Awaiting confirmation',
+            'created' => null,
+            'weight' => '2.1 kg',
+            'cost' => 'PHP 212.00',
+            'laundromat' => [
+                'id' => 1,
+                'name' => 'Lavandera Ko',
+            ],
+        ]
+    ];
 });

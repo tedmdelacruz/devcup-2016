@@ -3,7 +3,7 @@ import { AppRegistry, View, Text } from 'react-native'
 import { Scene, Router } from 'react-native-mobx'
 
 import store from './src/store'
-import Home from './src/pages/Home'
+import Dashboard from './src/pages/Dashboard'
 import Settings from './src/pages/Settings'
 
 export class App extends Component {
@@ -11,7 +11,7 @@ export class App extends Component {
         return (
             <Router store={store}>
                 <Scene key="root">
-                    <Scene key="index" component={Home} initial={true} hideNavBar={true}/>
+                    <Scene key="index" component={Dashboard} initial={true} hideNavBar={true}/>
                     <Scene key="settings" component={Settings} hideNavBar={true}/>
                 </Scene>
             </Router>

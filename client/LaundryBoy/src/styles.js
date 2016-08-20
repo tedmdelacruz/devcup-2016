@@ -11,11 +11,12 @@ const WHITE = '#FFF'
 const BLUE_WHITE = '#E4F1FE'
 const DARK_GREY = '#444'
 const GREY = '#888'
+const LIGHT_GREY = '#EFEFEF'
 
 const PRIMARY = CARIBBEAN_GREEN
 const PRIMARY_ALT = TURQUOISE
 const SECONDARY = WHITE
-const SECONDARY_ALT = BLUE_WHITE
+const SECONDARY_ALT = LIGHT_GREY 
 const ACCENT = CALIFORNIA
 
 export const color = {
@@ -30,6 +31,8 @@ export const color = {
 const BASE_FONT_SIZE = 18
 const DEFAULT_TEXT_COLOR = DARK_GREY
 const INVERSE_TEXT_COLOR = WHITE
+const PRIMARY_TEXT_COLOR =PRIMARY 
+const ACCENT_TEXT_COLOR = ACCENT
 
 // Component Styles
 const block = {
@@ -44,6 +47,8 @@ export const util = StyleSheet.create({
     BG_ACCENT: { backgroundColor: ACCENT },
     TEXT_DEFAULT: { color: DEFAULT_TEXT_COLOR },
     TEXT_INVERSE: { color: INVERSE_TEXT_COLOR },
+    TEXT_PRIMARY: { color: PRIMARY_TEXT_COLOR },
+    TEXT_ACCENT: { color: ACCENT_TEXT_COLOR },
     TEXT_CENTER: { textAlign: 'center' },
 })
 
@@ -81,6 +86,17 @@ export const components = StyleSheet.create({
         flex: 8,
         backgroundColor: SECONDARY,
     },
+    orderCard: {
+        flex: 1,
+        backgroundColor: SECONDARY_ALT,
+        marginBottom: BASE_UNIT / 3,
+    },
+    orderCardContent: {
+        ...block,
+        minHeight: BASE_UNIT * 2,
+    },
+    orderCardButton: {
+    },
     bottomNav: {
         flex: 2,
         flexDirection: 'row',
@@ -105,9 +121,6 @@ export const font = StyleSheet.create({
     DEFAULT: {
         fontSize: BASE_FONT_SIZE,
         color: DEFAULT_TEXT_COLOR,
-    },
-    INVERSE: {
-        color: INVERSE_TEXT_COLOR,
-    },
+    }
 })
     
