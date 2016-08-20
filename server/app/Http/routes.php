@@ -78,3 +78,7 @@ Route::get('/laundromats', function () {
 Route::post('/request_pickup', function () {
     return ['result' => 'success'];
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
