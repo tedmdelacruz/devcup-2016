@@ -121,6 +121,9 @@ export const font = StyleSheet.create({
     DEFAULT: {
         fontSize: BASE_FONT_SIZE,
         color: DEFAULT_TEXT_COLOR,
+    },
+    MEDIUM: {
+        fontSize: BASE_FONT_SIZE * 1.2,
     }
 })
     

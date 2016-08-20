@@ -52,3 +52,20 @@ Route::get('/orders', function () {
         ]
     ];
 });
+
+Route::get('/laundromats', function () {
+    return [
+        [
+            'id' => 1,
+            'name' => 'Lavandera Ko',
+            'business_hours' => '7AM to 10PM',
+            'address' => '123 Test Building, Test Street, Test City',
+        ],
+        [
+            'id' => 2,
+            'name' => 'SUDS Laundry',
+            'business_hours' => '7AM to 10PM',
+            'address' => '123 Test Building, Test Street, Test City',
+        ],
+    ];
+});

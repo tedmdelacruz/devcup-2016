@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { Text } from 'react-native'
 
 import { block, components, font } from '../styles'
-import Base from './Base'
+import BaseLayout from './BaseLayout'
 
 export default class Settings extends Component {
     render() {
         return (
-            <Base>
+            <BaseLayout>
                 <Text>This is the Settings page</Text>
-            </Base>
+            </BaseLayout>
         )
     }
 }

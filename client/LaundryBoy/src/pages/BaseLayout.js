@@ -31,9 +31,7 @@ export default class Base extends Component {
                 <Content>
                     { this.props.children }
                 </Content>
-
-                <BottomNav/>
-
+                
             </DrawerLayoutAndroid>
         )
     }

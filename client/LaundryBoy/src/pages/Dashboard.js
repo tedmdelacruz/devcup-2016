@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { ScrollView, RefreshControl, View, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 
 import { font, util } from '../styles'
-import Base from './Base'
+import BaseLayout from './BaseLayout'
 import Button from '../components/Button'
 import OrderCard from '../components/Dashboard/OrderCard'
 
@@ -12,6 +13,9 @@ export default class Dashboard extends Component {
     constructor(props) {
         super()
         this.store = props.store.dashboard
+    }
+
+    componentWillMount() {
         this.store.fetchOrders()
     }
 
@@ -21,7 +25,7 @@ export default class Dashboard extends Component {
 
     render() {
         return (
-            <Base>
+            <BaseLayout>
                 <ScrollView
                     refreshControl={
                         <RefreshControl
@@ -34,10 +38,10 @@ export default class Dashboard extends Component {
                         ) }
                 </ScrollView>
 
-                <Button style={[ util.BG_ACCENT ]} onPress={ this.handleRequestPickup.bind(this) }>
+                <Button style={[ util.BG_ACCENT ]} onPress={ Actions.requestPickup }>
                     <Text style={[ font.DEFAULT, util.TEXT_INVERSE, util.TEXT_CENTER ]}>Request Pickup</Text>
                 </Button>
-            </Base>
+            </BaseLayout>
         )
     }
 }
