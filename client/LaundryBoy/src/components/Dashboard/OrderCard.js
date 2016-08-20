@@ -11,7 +11,7 @@ export default class OrderCard extends Component {
                 <View style={[ components.orderCardContent ]}>
                     <Text style={{ fontSize: 20 }}>{ order.laundromat.name }</Text>
                     <Text style={[ util.TEXT_PRIMARY ]}>{ order.status }</Text>
-                    <Text>{ order.pending_payment }</Text>
+                    <Text>{ order.cost }</Text>
                 </View>
                 <Button style={[ components.orderCardButton ]} onPress={() => {}}>
                     <Text style={[ font.DEFAULT, util.TEXT_INVERSE, util.TEXT_CENTER ]}>Request Delivery</Text>

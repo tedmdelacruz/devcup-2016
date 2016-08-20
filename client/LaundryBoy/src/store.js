@@ -15,8 +15,8 @@ class DashboardStore {
     @observable orders = []
 
     fetchOrders() {
-        this.orders =  [{"id":1,"status":"Ready for delivery","created":null,"weight":"1.2 kg","pending_payment":"PHP 128.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":"Awaiting confirmation","created":null,"weight":"2.1 kg","pending_payment":"PHP 212.00","laundromat":{"id":1,"name":"Lavandera Ko"}}];
-        return
+        // this.orders =  [{"id":1,"status":"Ready for delivery","created":null,"weight":"1.2 kg","pending_payment":"PHP 128.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":"Awaiting confirmation","created":null,"weight":"2.1 kg","pending_payment":"PHP 212.00","laundromat":{"id":1,"name":"Lavandera Ko"}}];
+        // return
 
         this.isLoading = true
         console.log(env.BASE_URL + '/orders')

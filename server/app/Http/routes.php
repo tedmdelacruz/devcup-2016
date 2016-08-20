@@ -38,6 +38,17 @@ Route::get('/orders', function () {
                 'id' => 1,
                 'name' => 'Lavandera Ko',
             ],
+        ],
+        [
+            'id' => 3,
+            'status' => 'Awaiting confirmation',
+            'created' => null,
+            'weight' => '1.3 kg',
+            'cost' => 'PHP 132.00',
+            'laundromat' => [
+                'id' => 1,
+                'name' => 'Lavandera Ko',
+            ],
         ]
     ];
 });
