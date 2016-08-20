@@ -23,6 +23,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '1.2 kg',
             'cost' => 'PHP 128.00',
+            'remarks' => '',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'Lavandera Ko',
@@ -34,9 +35,10 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '2.1 kg',
             'cost' => 'PHP 212.00',
+            'remarks' => 'Dry clean',
             'laundromat' => [
                 'id' => 1,
-                'name' => 'Lavandera Ko',
+                'name' => 'SUDS Laundry',
             ],
         ],
         [
@@ -45,6 +47,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '1.3 kg',
             'cost' => 'PHP 132.00',
+            'remarks' => '',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'Lavandera Ko',
@@ -58,12 +61,14 @@ Route::get('/laundromats', function () {
         [
             'id' => 1,
             'name' => 'Lavandera Ko',
+            'phone' => '+63 998 765 4321',
             'business_hours' => '7AM to 10PM',
             'address' => '123 Test Building, Test Street, Test City',
         ],
         [
             'id' => 2,
             'name' => 'SUDS Laundry',
+            'phone' => '+63 998 765 4321',
             'business_hours' => '7AM to 10PM',
             'address' => '123 Test Building, Test Street, Test City',
         ],

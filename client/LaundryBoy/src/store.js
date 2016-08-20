@@ -15,8 +15,8 @@ class DashboardStore {
     @observable orders = []
 
     fetchOrders() {
-        this.orders = [{"id":1,"status":"Ready for pickup","created":null,"weight":"1.2 kg","cost":"PHP 128.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":"Awaiting confirmation","created":null,"weight":"2.1 kg","cost":"PHP 212.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":3,"status":"Awaiting confirmation","created":null,"weight":"1.3 kg","cost":"PHP 132.00","laundromat":{"id":1,"name":"Lavandera Ko"}}];
-        return
+        // this.orders = [{"id":1,"status":"Ready for pickup","created":null,"weight":"1.2 kg","cost":"PHP 128.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":"Awaiting confirmation","created":null,"weight":"2.1 kg","cost":"PHP 212.00","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":3,"status":"Awaiting confirmation","created":null,"weight":"1.3 kg","cost":"PHP 132.00","laundromat":{"id":1,"name":"Lavandera Ko"}}];
+        // return
 
         this.isLoading = true
         this.orders = []
@@ -33,7 +33,7 @@ class DashboardStore {
 }
 
 @autobind
-class RequestPickupStore {
+class NearbyLaundromatsStore {
     @observable isLoading = false
     @observable errors = []
     @observable laundromats = []
@@ -59,5 +59,5 @@ class RequestPickupStore {
 export default {
     app: new AppStore,
     dashboard: new DashboardStore,
-    requestPickup: new RequestPickupStore
+    nearbyLaundromats: new NearbyLaundromatsStore
 }

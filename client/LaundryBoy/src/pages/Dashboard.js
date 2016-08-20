@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux'
 import { font, util } from '../styles'
 import BaseLayout from './BaseLayout'
 import Button from '../components/Button'
-import OrderCard from '../components/Dashboard/OrderCard'
+import OrderCard from '../components/OrderCard'
 
 export default class Dashboard extends Component {
     store = {}
@@ -38,7 +38,7 @@ export default class Dashboard extends Component {
                         ) }
                 </ScrollView>
 
-                <Button style={[ util.BG_ACCENT ]} onPress={ Actions.requestPickup }>
+                <Button style={[ util.BG_ACCENT ]} onPress={ Actions.nearbyLaundromats }>
                     <Text style={[ font.DEFAULT, util.TEXT_INVERSE, util.TEXT_CENTER ]}>Request Pickup</Text>
                 </Button>
             </BaseLayout>

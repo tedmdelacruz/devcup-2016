@@ -31,8 +31,9 @@ export const color = {
 const BASE_FONT_SIZE = 18
 const DEFAULT_TEXT_COLOR = DARK_GREY
 const INVERSE_TEXT_COLOR = WHITE
-const PRIMARY_TEXT_COLOR =PRIMARY 
+const PRIMARY_TEXT_COLOR = PRIMARY 
 const ACCENT_TEXT_COLOR = ACCENT
+const MUTED_TEXT_COLOR = GREY
 
 // Component Styles
 const block = {
@@ -49,6 +50,7 @@ export const util = StyleSheet.create({
     TEXT_INVERSE: { color: INVERSE_TEXT_COLOR },
     TEXT_PRIMARY: { color: PRIMARY_TEXT_COLOR },
     TEXT_ACCENT: { color: ACCENT_TEXT_COLOR },
+    TEXT_MUTED: { color: MUTED_TEXT_COLOR },
     TEXT_CENTER: { textAlign: 'center' },
 })
 
@@ -93,7 +95,7 @@ export const components = StyleSheet.create({
     },
     orderCardContent: {
         ...block,
-        minHeight: BASE_UNIT * 2,
+        minHeight: BASE_UNIT * 2.25,
     },
     orderCardButton: {
     },
@@ -124,6 +126,9 @@ export const font = StyleSheet.create({
     },
     MEDIUM: {
         fontSize: BASE_FONT_SIZE * 1.2,
-    }
+    },
+    ITALIC: {
+        fontStyle: 'italic',
+    },
 })
     

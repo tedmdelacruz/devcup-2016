@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { ScrollView, RefreshControl, Text } from 'react-native'
 import { util, components, font } from '../styles'
 import BaseLayout from './BaseLayout'
-import LaundromatCard from '../components/RequestPickup/LaundromatCard'
+import LaundromatCard from '../components/LaundromatCard'
 
-export default class RequestPickup extends Component {
+export default class NearbyLaundromats extends Component {
     constructor(props) {
         super()
-        this.store = props.store.requestPickup
+        this.store = props.store.nearbyLaundromats
     }
 
     componentWillMount() {

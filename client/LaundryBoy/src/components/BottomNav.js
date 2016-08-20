@@ -12,7 +12,7 @@ export default class BottomNav extends Component {
                 </TouchableHighlight>
 
                 <TouchableHighlight style={ components.bottomNavItem } onPress={ Actions.settings }>
-                    <Text style={ components.bottomNavItemText }>Settings</Text>
+                    <Text style={ components.bottomNavItemText }>Laundromats</Text>
                 </TouchableHighlight>
             </View>
         )
