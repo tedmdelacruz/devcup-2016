@@ -10,7 +10,7 @@ export default class Drawer extends Component {
             <ScrollView style={ components.drawer }>
                 <TouchableHighlight style={ components.drawerItem } onPress={ Actions.index }>
                     <Text style={ font.DEFAULT }>
-                        Dashboard
+                        My Orders
                     </Text>
                 </TouchableHighlight>
 

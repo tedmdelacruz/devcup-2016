@@ -85,7 +85,7 @@ export const components = StyleSheet.create({
     },
     content: {
         ...block,
-        flex: 8,
+        flex: 9,
         backgroundColor: SECONDARY,
     },
     orderCard: {

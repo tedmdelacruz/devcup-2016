@@ -26,6 +26,7 @@ export default class Dashboard extends Component {
     render() {
         return (
             <BaseLayout>
+                <Text style={[ font.MEDIUM, util.TEXT_CENTER, util.PUSH_BOTTOM ]}>My Orders</Text>
                 <ScrollView
                     refreshControl={
                         <RefreshControl
