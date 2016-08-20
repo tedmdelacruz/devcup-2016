@@ -7,8 +7,16 @@ import Dashboard from './src/pages/Dashboard'
 import NearbyLaundromats from './src/pages/NearbyLaundromats'
 import RequestPickup from './src/pages/RequestPickup'
 import Settings from './src/pages/Settings'
+import PushNotification from './src/pushNotification'
 
 export class App extends Component {
+    componentWillMount() {
+        PushNotification.localNotification({
+            message: 'Hey there',
+            playSound: true,
+        })
+    }
+    
     render() {
         return (
             <Router store={store}>
