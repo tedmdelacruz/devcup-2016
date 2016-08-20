@@ -69,7 +69,7 @@ export const components = StyleSheet.create({
         backgroundColor: PRIMARY,
     },
     toolbarDrawerIcon: {
-        ...block,
+        padding: 12,
         flex: 1,
     },
     toolbar: {
