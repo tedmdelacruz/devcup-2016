@@ -19,10 +19,6 @@ export default class Dashboard extends Component {
         this.store.fetchOrders()
     }
 
-    handleRequestPickup() {
-
-    }
-
     render() {
         return (
             <BaseLayout>

@@ -5,6 +5,15 @@ import { font, components, util } from '../styles'
 import Button from './Button'
 
 export default class LaundromatCard extends Component {
+    constructor(props) {
+        super()
+        this.store = props.store.RequestPickup
+    }
+
+    handleRequest() {
+        Actions.requestPickup({ laundromat: this.props.laundromat })
+    }
+
     render() {
         const laundromat = this.props.laundromat
         return (
@@ -15,7 +24,7 @@ export default class LaundromatCard extends Component {
                     <Text>{ laundromat.address }</Text>
                     <Text>{ laundromat.phone }</Text>
                 </View>
-                <Button style={[ components.orderCardButton ]} onPress={ Actions.requestPickup }>
+                <Button style={[ components.orderCardButton ]} onPress={ this.handleRequest.bind(this) }>
                     <Text style={[ font.DEFAULT, util.TEXT_INVERSE, util.TEXT_CENTER ]}>Request Pickup</Text>
                 </Button>
             </View>

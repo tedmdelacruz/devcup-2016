@@ -26,7 +26,8 @@ export default class NearbyLaundromats extends Component {
                         }>
 
                         { this.store.laundromats.map((laundromat, idx) => 
-                            <LaundromatCard laundromat={ laundromat } key={ idx }/>
+                            <LaundromatCard laundromat={ laundromat } key={ idx }
+                                store={ this.props.store.requestPickup }/>
                         ) }
                 </ScrollView>
             </BaseLayout>

@@ -127,6 +127,9 @@ export const font = StyleSheet.create({
     MEDIUM: {
         fontSize: BASE_FONT_SIZE * 1.2,
     },
+    LARGE: {
+        fontSize: BASE_FONT_SIZE * 1.8,
+    },
     ITALIC: {
         fontStyle: 'italic',
     },
