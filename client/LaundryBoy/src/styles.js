@@ -18,6 +18,7 @@ const PRIMARY_ALT = TURQUOISE
 const SECONDARY = WHITE
 const SECONDARY_ALT = LIGHT_GREY 
 const ACCENT = CALIFORNIA
+const MUTED = GREY
 
 export const color = {
     PRIMARY,
@@ -25,6 +26,7 @@ export const color = {
     SECONDARY,
     SECONDARY_ALT,
     ACCENT,
+    MUTED,
 }
 
 // Font Styles
@@ -46,12 +48,14 @@ export const util = StyleSheet.create({
     BG_DEFAULT: { backgroundColor: PRIMARY },
     BG_INVERSE: { backgroundColor: SECONDARY },
     BG_ACCENT: { backgroundColor: ACCENT },
+    BG_MUTED: { backgroundColor: MUTED },
     TEXT_DEFAULT: { color: DEFAULT_TEXT_COLOR },
     TEXT_INVERSE: { color: INVERSE_TEXT_COLOR },
     TEXT_PRIMARY: { color: PRIMARY_TEXT_COLOR },
     TEXT_ACCENT: { color: ACCENT_TEXT_COLOR },
     TEXT_MUTED: { color: MUTED_TEXT_COLOR },
     TEXT_CENTER: { textAlign: 'center' },
+    TEXT_RIGHT: { textAlign: 'right' },
 })
 
 export const components = StyleSheet.create({
