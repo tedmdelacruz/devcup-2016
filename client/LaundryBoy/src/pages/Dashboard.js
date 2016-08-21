@@ -31,7 +31,8 @@ export default class Dashboard extends Component {
                         }>
 
                         { this.store.orders.map((order, idx) => 
-                            <OrderCard order={ order } key={ idx }/>
+                            <OrderCard order={ order } key={ idx }
+                                store={ this.props.store.requestDelivery }/>
                         ) }
                 </ScrollView>
 

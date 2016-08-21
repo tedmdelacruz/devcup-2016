@@ -93,9 +93,15 @@ class RequestPickupStore {
     }
 }
 
+@autobind
+class RequestDeliveryStore {
+    @observable order = {}
+}
+
 export default {
     app: new AppStore,
     dashboard: new DashboardStore,
     nearbyLaundromats: new NearbyLaundromatsStore,
     requestPickup: new RequestPickupStore,
+    requestDelivery: new RequestDeliveryStore,
 }

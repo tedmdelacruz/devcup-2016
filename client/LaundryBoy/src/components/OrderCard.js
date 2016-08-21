@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { font, components, util } from '../styles'
 import Button from './Button'
 import constants from '../constants'
@@ -27,6 +28,7 @@ export default class OrderCard extends Component {
             case constants.READY_FOR_DELIVERY:
                 buttonStyle = util.BG_DEFAULT
                 buttonText = 'Request Delivery'
+                handlePress = () => Actions.requestDelivery({ order })
                 break
         }
         
@@ -57,8 +59,8 @@ export default class OrderCard extends Component {
                             { order.cost ? <Text style={[ util.TEXT_RIGHT, util.TEXT_ACCENT ]}>{ order.cost }</Text> : null}
                         </View>
                     </View>
-                    { order.remarks 
-                        ? <Text style={[ util.TEXT_MUTED, font.ITALIC ]}>*{ order.remarks }</Text>
+                    { order.notes 
+                        ? <Text style={[ util.TEXT_MUTED, font.ITALIC ]}>Notes: { order.notes }</Text>
                         : null }
                     
                 </View>

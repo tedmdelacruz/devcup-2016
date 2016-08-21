@@ -12,17 +12,16 @@ export default class RequestPickup extends Component {
     }
 
     render() {
-        const laundromat = this.props.laundromat
         return (
             <BaseLayout>
                 <ScrollView style={{ paddingBottom: 100 }}>
                     <View style={[ util.PUSH_BOTTOM, util.BG_INVERSE_ALT, util.PAD ]}>
                         <Text style={[ font.MEDIUM, font.BOLD, util.TEXT_CENTER, util.PUSH_BOTTOM ]}>Request Pickup</Text>
-                        <Text style={[ font.LARGE, util.TEXT_CENTER, util.PUSH_BOTTOM ]}>{ laundromat.name }</Text>
-                        <Text style={[ util.PUSH_BOTTOM ]}>{ laundromat.business_hours }</Text>
-                        <Text style={[ util.PUSH_BOTTOM ]}>{ laundromat.address }</Text>
-                        <Text style={[ util.PUSH_BOTTOM ]}>{ laundromat.phone }</Text>
-                        <Text style={[ util.PUSH_BOTTOM ]}>{ laundromat.base_price }</Text>
+                        <Text style={[ font.LARGE, util.TEXT_CENTER, util.PUSH_BOTTOM ]}>{ this.store.laundromat.name }</Text>
+                        <Text style={[ util.PUSH_BOTTOM ]}>{ this.store.laundromat.business_hours }</Text>
+                        <Text style={[ util.PUSH_BOTTOM ]}>{ this.store.laundromat.address }</Text>
+                        <Text style={[ util.PUSH_BOTTOM ]}>{ this.store.laundromat.phone }</Text>
+                        <Text style={[ util.PUSH_BOTTOM ]}>{ this.store.laundromat.base_price }</Text>
                     </View>
                     
                     <View style={[ util.PUSH_BOTTOM, { flexDirection: 'row' } ]}>
