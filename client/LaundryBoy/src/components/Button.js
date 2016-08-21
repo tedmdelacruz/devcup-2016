@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, TouchableHighlight } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { components } from '../styles'
 
 export default class Button extends Component {
@@ -14,11 +14,12 @@ export default class Button extends Component {
         }
 
         return (
-            <TouchableHighlight style={buttonStyles}
-                onPress={ this.handlePress.bind(this) }>
+            <TouchableOpacity style={buttonStyles}
+                onPress={ this.handlePress.bind(this) }
+                activeOpacity={ 0.8 }>
 
                 { this.props.children }
-            </TouchableHighlight>
+            </TouchableOpacity>
         )
     }
 }
