@@ -23,7 +23,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '1.2 kg',
             'cost' => 'PHP 128.00',
-            'remarks' => '',
+            'notes' => '',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'Lavandera Ko',
@@ -35,7 +35,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '2.1 kg',
             'cost' => 'PHP 212.00',
-            'remarks' => 'Dry clean',
+            'notes' => 'Dry clean',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'SUDS Laundry',
@@ -47,7 +47,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '1.3 kg',
             'cost' => 'PHP 132.00',
-            'remarks' => '',
+            'notes' => '',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'Lavandera Ko',
@@ -59,7 +59,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '1.3 kg',
             'cost' => 'PHP 132.00',
-            'remarks' => '',
+            'notes' => '',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'Lavandera Ko',
@@ -71,7 +71,7 @@ Route::get('/orders', function () {
             'created' => null,
             'weight' => '1.3 kg',
             'cost' => 'PHP 132.00',
-            'remarks' => '',
+            'notes' => '',
             'laundromat' => [
                 'id' => 1,
                 'name' => 'Lavandera Ko',
@@ -102,6 +102,10 @@ Route::get('/laundromats', function () {
 });
 
 Route::post('/request_pickup', function () {
+    return ['result' => 'success'];
+});
+
+Route::post('/request_delivery', function () {
     return ['result' => 'success'];
 });
 

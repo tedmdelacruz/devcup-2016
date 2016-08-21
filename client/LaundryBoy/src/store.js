@@ -69,6 +69,7 @@ class RequestPickupStore {
     @observable errors = []
 
     reset() {
+        this.isLoading = false
         this.laundromat = {}
         this.form = {
             includesDryClean: false,
@@ -84,7 +85,6 @@ class RequestPickupStore {
             .then(response => {
                 this.reset()
                 Actions.index({ refreshOnLoad: true })
-                this.isLoading = false
             })
             .catch(error => {
                 console.error(error)
@@ -95,7 +95,34 @@ class RequestPickupStore {
 
 @autobind
 class RequestDeliveryStore {
+    @observable isLoading = false
     @observable order = {}
+    @observable form = {
+        bring_change_for: '' 
+    }
+    @observable errors = []
+
+    reset() {
+        this.isLoading = false
+        this.order = {}
+        this.form = {
+            bring_change_for: '' 
+        }
+    }
+
+    doRequestDelivery() {
+        this.isLoading = true
+        const data = { order_id: this.order.id, ...this.form }
+        axios.post(env.BASE_URL + '/request_delivery', data)
+            .then(response => {
+                this.reset()
+                Actions.index({ refreshOnLoad: true })
+            })
+            .catch(error => {
+                console.error(error)
+                this.errors.push('Failed to request delivery')
+            })
+    }
 }
 
 export default {
