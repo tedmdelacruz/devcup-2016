@@ -7,6 +7,7 @@ import Dashboard from './src/pages/Dashboard'
 import NearbyLaundromats from './src/pages/NearbyLaundromats'
 import RequestPickup from './src/pages/RequestPickup'
 import RequestDelivery from './src/pages/RequestDelivery'
+import SplashScreen from './src/pages/SplashScreen'
 import Settings from './src/pages/Settings'
 
 export class App extends Component {    
@@ -14,7 +15,8 @@ export class App extends Component {
         return (
             <Router store={store}>
                 <Scene key="root">
-                    <Scene key="index" component={Dashboard} initial={true} hideNavBar={true}/>
+                    <Scene key="splash" component={SplashScreen} initial={true} hideNavBar={true}/>
+                    <Scene key="index" component={Dashboard} hideNavBar={true}/>
                     <Scene key="nearbyLaundromats" component={NearbyLaundromats} hideNavBar={true}/>
                     <Scene key="requestPickup" component={RequestPickup} hideNavBar={true}/>
                     <Scene key="requestDelivery" component={RequestDelivery} hideNavBar={true}/>
