@@ -3,5 +3,6 @@ export default constants = {
     PICKUP_CONFIRMED: 1,
     RECEIVED: 2,
     READY_FOR_DELIVERY: 3,
-    COMPLETED: 4,
+    IN_TRANSIT: 4,
+    COMPLETED: 5,
 }

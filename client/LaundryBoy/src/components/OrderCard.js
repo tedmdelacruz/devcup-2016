@@ -21,6 +21,7 @@ export default class OrderCard extends Component {
             case constants.AWAITING_PICKUP_CONFIRM: 
             case constants.PICKUP_CONFIRMED:
             case constants.RECEIVED:
+            case constants.IN_TRANSIT:
             case constants.COMPLETED:
                 buttonStyle = util.BG_MUTED
                 buttonText = 'Contact Laundromat'

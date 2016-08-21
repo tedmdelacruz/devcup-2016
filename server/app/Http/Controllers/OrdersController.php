@@ -11,7 +11,9 @@ use App\Http\Requests;
 class OrdersController extends Controller
 {
     public function get() {
-        return Order::with('Laundromat')->get();
+        return Order::with('Laundromat')
+            ->orderBy('id', 'desc')
+            ->get();
     }
 
     public function create(Request $request) {

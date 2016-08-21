@@ -37,9 +37,6 @@ class NearbyLaundromatsStore {
     @observable laundromats = []
 
     fetchLaundromats() {
-        this.laundromats = [{"id":1,"name":"Ted's Laundromat","email":"tedmdelacruz@gmail.com","base_price":27,"business_hours":"7am to 10pm","phone":"(0998) 765 4321","address":"123 Test Building, Test Street, Test City","user_id":1,"created_at":"2016-08-21 05:17:07","updated_at":"2016-08-21 05:23:09"}]
-        return
-
         this.isLoading = true
         this.laundromats = []
         axios.get(env.BASE_URL + '/laundromats')

@@ -5,5 +5,6 @@ export const status = {
     [constants.PICKUP_CONFIRMED]: 'Pickup confirmed',
     [constants.RECEIVED]: 'Laundry received and weighted',
     [constants.READY_FOR_DELIVERY]: 'Ready for delivery',
+    [constants.IN_TRANSIT]: 'Delivery is on the way ',
     [constants.COMPLETED]: 'Delivered, completed',
 }
