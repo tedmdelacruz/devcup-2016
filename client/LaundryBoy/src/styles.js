@@ -47,6 +47,7 @@ export const util = StyleSheet.create({
     PUSH_BOTTOM: { marginBottom: BASE_UNIT / 3 },
     BG_DEFAULT: { backgroundColor: PRIMARY },
     BG_INVERSE: { backgroundColor: SECONDARY },
+    BG_INVERSE_ALT: { backgroundColor: SECONDARY_ALT },
     BG_ACCENT: { backgroundColor: ACCENT },
     BG_MUTED: { backgroundColor: MUTED },
     TEXT_DEFAULT: { color: DEFAULT_TEXT_COLOR },
@@ -136,6 +137,9 @@ export const font = StyleSheet.create({
     },
     ITALIC: {
         fontStyle: 'italic',
+    },
+    BOLD: {
+        fontWeight: 'bold',
     },
 })
     

@@ -16,6 +16,9 @@ class DashboardStore {
     @observable orders = []
 
     fetchOrders() {
+        // this.orders = [{"id":1,"status":0,"created":null,"weight":"1.2 kg","cost":"PHP 128.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":1,"created":null,"weight":"2.1 kg","cost":"PHP 212.00","remarks":"Dry clean","laundromat":{"id":1,"name":"SUDS Laundry"}},{"id":3,"status":2,"created":null,"weight":"1.3 kg","cost":"PHP 132.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":4,"status":3,"created":null,"weight":"1.3 kg","cost":"PHP 132.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":5,"status":4,"created":null,"weight":"1.3 kg","cost":"PHP 132.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}}]
+        // return
+
         this.isLoading = true
         this.orders = []
         axios.get(env.BASE_URL + '/orders')
@@ -37,6 +40,9 @@ class NearbyLaundromatsStore {
     @observable laundromats = []
 
     fetchLaundromats() {
+        // this.laundromats = [{"id":1,"name":"Lavandera Ko","phone":"+63 998 765 4321","business_hours":"7AM to 10PM","address":"123 Test Building, Test Street, Test City"},{"id":2,"name":"SUDS Laundry","phone":"+63 998 765 4321","business_hours":"7AM to 10PM","address":"123 Test Building, Test Street, Test City"}]
+        // return
+
         this.isLoading = true
         this.laundromats = []
         axios.get(env.BASE_URL + '/laundromats')
@@ -55,13 +61,28 @@ class NearbyLaundromatsStore {
 class RequestPickupStore {
     @observable isLoading = false
     @observable laundromat = {}
+    @observable form = {
+        includesDryClean: false,
+        requestPressing: false,
+        notes: '',
+    }
     @observable errors = []
+
+    reset() {
+        this.laundromat = {}
+        this.form = {
+            includesDryClean: false,
+            requestPressing: false,
+            notes: '',
+        }   
+    }
 
     doRequestPickup() {
         this.isLoading = true
-        axios.post(env.BASE_URL + '/request_pickup', { ...this.laundromat })
+        const data = { laundromat_id: this.laundromat.id, ...this.form }
+        axios.post(env.BASE_URL + '/request_pickup', data)
             .then(response => {
-                this.laundromat = {}
+                this.reset()
                 Actions.index({ refreshOnLoad: true })
                 this.isLoading = false
             })

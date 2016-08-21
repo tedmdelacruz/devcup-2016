@@ -19,7 +19,7 @@ Route::get('/orders', function () {
     return [
         [
             'id' => 1,
-            'status' => 'Ready for pickup',
+            'status' => 0,
             'created' => null,
             'weight' => '1.2 kg',
             'cost' => 'PHP 128.00',
@@ -31,7 +31,7 @@ Route::get('/orders', function () {
         ],
         [
             'id' => 2,
-            'status' => 'Awaiting confirmation',
+            'status' => 1,
             'created' => null,
             'weight' => '2.1 kg',
             'cost' => 'PHP 212.00',
@@ -43,7 +43,31 @@ Route::get('/orders', function () {
         ],
         [
             'id' => 3,
-            'status' => 'Awaiting confirmation',
+            'status' => 2,
+            'created' => null,
+            'weight' => '1.3 kg',
+            'cost' => 'PHP 132.00',
+            'remarks' => '',
+            'laundromat' => [
+                'id' => 1,
+                'name' => 'Lavandera Ko',
+            ],
+        ],
+        [
+            'id' => 4,
+            'status' => 3,
+            'created' => null,
+            'weight' => '1.3 kg',
+            'cost' => 'PHP 132.00',
+            'remarks' => '',
+            'laundromat' => [
+                'id' => 1,
+                'name' => 'Lavandera Ko',
+            ],
+        ],
+        [
+            'id' => 5,
+            'status' => 4,
             'created' => null,
             'weight' => '1.3 kg',
             'cost' => 'PHP 132.00',
@@ -61,6 +85,7 @@ Route::get('/laundromats', function () {
         [
             'id' => 1,
             'name' => 'Lavandera Ko',
+            'base_price' => 'PHP 27 per kg',
             'phone' => '+63 998 765 4321',
             'business_hours' => '7AM to 10PM',
             'address' => '123 Test Building, Test Street, Test City',
@@ -68,6 +93,7 @@ Route::get('/laundromats', function () {
         [
             'id' => 2,
             'name' => 'SUDS Laundry',
+            'base_price' => 'PHP 32 per kg',
             'phone' => '+63 998 765 4321',
             'business_hours' => '7AM to 10PM',
             'address' => '123 Test Building, Test Street, Test City',
