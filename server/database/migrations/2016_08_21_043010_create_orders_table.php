@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLaundromatsTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,13 @@ class CreateLaundromatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('laundromats', function(Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->integer('base_price');
-            $table->string('business_hours');
-            $table->string('phone');
-            $table->text('address');
+            $table->integer('status')->index();
+            $table->integer('weight');
+            $table->decimal('cost', 5, 2);
+            $table->text('notes');
+            $table->integer('laundromat_id')->index();
             $table->integer('user_id')->index();
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ class CreateLaundromatsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('laundromats');
+        Schema::drop('orders');
     }
 }

@@ -55,8 +55,8 @@ export default class OrderCard extends Component {
                             <Text style={[ util.TEXT_MUTED ]}>{ status[order.status] }</Text>
                         </View>
                         <View style={{ flex: 2 }}>
-                            { order.weight ? <Text style={ util.TEXT_RIGHT }>Weight: { order.weight }</Text> : null}
-                            { order.cost ? <Text style={[ util.TEXT_RIGHT, util.TEXT_ACCENT ]}>{ order.cost }</Text> : null}
+                            { order.weight ? <Text style={ util.TEXT_RIGHT }>Weight: { order.weight } kg</Text> : null}
+                            { order.cost ? <Text style={[ util.TEXT_RIGHT, util.TEXT_ACCENT ]}>PHP { order.cost }</Text> : null}
                         </View>
                     </View>
                     { order.notes 

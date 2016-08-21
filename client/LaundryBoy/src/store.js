@@ -16,9 +16,6 @@ class DashboardStore {
     @observable orders = []
 
     fetchOrders() {
-        // this.orders = [{"id":1,"status":0,"created":null,"weight":"1.2 kg","cost":"PHP 128.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":2,"status":1,"created":null,"weight":"2.1 kg","cost":"PHP 212.00","remarks":"Dry clean","laundromat":{"id":1,"name":"SUDS Laundry"}},{"id":3,"status":2,"created":null,"weight":"1.3 kg","cost":"PHP 132.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":4,"status":3,"created":null,"weight":"1.3 kg","cost":"PHP 132.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}},{"id":5,"status":4,"created":null,"weight":"1.3 kg","cost":"PHP 132.00","remarks":"","laundromat":{"id":1,"name":"Lavandera Ko"}}]
-        // return
-
         this.isLoading = true
         this.orders = []
         axios.get(env.BASE_URL + '/orders')
@@ -40,8 +37,8 @@ class NearbyLaundromatsStore {
     @observable laundromats = []
 
     fetchLaundromats() {
-        // this.laundromats = [{"id":1,"name":"Lavandera Ko","phone":"+63 998 765 4321","business_hours":"7AM to 10PM","address":"123 Test Building, Test Street, Test City"},{"id":2,"name":"SUDS Laundry","phone":"+63 998 765 4321","business_hours":"7AM to 10PM","address":"123 Test Building, Test Street, Test City"}]
-        // return
+        this.laundromats = [{"id":1,"name":"Ted's Laundromat","email":"tedmdelacruz@gmail.com","base_price":27,"business_hours":"7am to 10pm","phone":"(0998) 765 4321","address":"123 Test Building, Test Street, Test City","user_id":1,"created_at":"2016-08-21 05:17:07","updated_at":"2016-08-21 05:23:09"}]
+        return
 
         this.isLoading = true
         this.laundromats = []
@@ -62,8 +59,8 @@ class RequestPickupStore {
     @observable isLoading = false
     @observable laundromat = {}
     @observable form = {
-        includesDryClean: false,
-        requestPressing: false,
+        includes_dry_clean: false,
+        request_pressing: false,
         notes: '',
     }
     @observable errors = []
@@ -72,17 +69,24 @@ class RequestPickupStore {
         this.isLoading = false
         this.laundromat = {}
         this.form = {
-            includesDryClean: false,
-            requestPressing: false,
+            includes_dry_clean: false,
+            request_pressing: false,
             notes: '',
         }   
     }
 
     doRequestPickup() {
         this.isLoading = true
-        const data = { laundromat_id: this.laundromat.id, ...this.form }
+        const data = {
+            laundromat_id: this.laundromat.id, 
+            user_id: 2, // FIXME
+             ...this.form
+        }
+        console.log(data)
+
         axios.post(env.BASE_URL + '/request_pickup', data)
             .then(response => {
+                console.log(response)
                 this.reset()
                 Actions.index({ refreshOnLoad: true })
             })
